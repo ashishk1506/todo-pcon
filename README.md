@@ -1,11 +1,19 @@
 # todo-pcon
 
-##Endpoints
+## Endpoints
 
-1.getAllItems -('/') GET this will give alll the todo items
+1.getAllItems -('/') 
+  ### METHOD- GET 
+   ##### this will give alll the todo items
 
-2.addItem -('/add') POST this will add new todo item
+2.addItem -('/add') 
+  ### METHOD- POST 
+   ##### this will add new todo item
 
-3.updateById -('/update/:id') POST this will update the todo list with given id
+3.updateById -('/update/:id') 
+  ### METHOD- POST 
+   ##### this will update the todo list with given id
 
-4.deleteById - ('/delete/:id') POST this will delete the todo item with given id
+4.deleteById -('/delete/:id') 
+  ### METHOD-POST 
+   ##### this will delete the todo item with given id
