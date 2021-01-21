@@ -1,0 +1,52 @@
+
+
+<%-include('_header')%>
+
+<div class="container-fluid ">
+  <span class="title1" style="display: flex; align-items: center;justify-content: center;height: 60px; 
+    font-weight: 600; font-size: 2rem; font-family: 'Karla', sans-serif;"> 
+    ToDo App 
+  </span>
+</div>
+
+<div class="container mt-5">
+   <div class="row">
+     <div class="col-6 offset-3">
+       <form class="form-inline" method="POST" action="/add">
+           <div class="form-group mx-sm-3 mb-2">
+             <input type="text" class="form-control" id="inputPassword2" placeholder="Enter ToDo" name="n" required>
+             <button type="submit" class="btn btn-warning mb-2 form-control">Add</button>
+           </div>
+       </form>
+     </div>
+   </div>
+</div>
+
+<div class="container mt-4">
+           <ul style="list-style: none;">
+               <% listItem.map((array)=>{ %>
+
+                    <div class="row m-2">
+                      <div class="col-10 offset-1 col-lg-6 offset-lg-3 bg-light"> 
+                        <li>
+                            <div style="font-size: 1.3rem; font-weight: 400; display: flex;justify-content: space-around;text-align: center; font-family: 'Karla', sans-serif;" class="m-2">
+                              <%= array.name %>
+                            </div>
+                            <div style="display: flex; justify-content: space-around;" class="m-1">
+                              <form method="POST" action="/delete/<%= array.id%>">
+                                <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                              </form>
+                              <form method="POST" action="/update/<%= array.id%>" >
+                                <input type="text" name="data" placeholder="Edit" required>
+                                <button type="submit" class="btn btn-success" ><i class="fas fa-eraser"></i></button>
+                              </form>
+                            </div>
+                        </li>
+                     </div>
+                  </div>
+
+                <%})%>
+           </ul>
+</div>
+
+<%-include('_footer')%>
